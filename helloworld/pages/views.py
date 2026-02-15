@@ -7,6 +7,14 @@ from django import forms
 class HomePageView(TemplateView):
     template_name = 'pages/home.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            "title": "Home - Online Store",
+            "subtitle": "Welcome Home",
+        })
+        return context
+
 class AboutPageView(TemplateView):
     template_name = 'pages/about.html'
 
@@ -72,3 +80,17 @@ class ProductCreateView(View):
             viewData["title"] = "Create product"
             viewData["form"] = form
             return render(request, self.template_name, viewData)
+        
+class ContactPageView(TemplateView):
+    template_name = 'pages/contact.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            "title": "Contact - Online Store",
+            "subtitle": "Contact Us",
+            "email": "support@onlinestore.com",
+            "address": "123 Main Street, Medellín, Colombia",
+            "phone": "+57 300 123 4567"
+        })
+        return context
