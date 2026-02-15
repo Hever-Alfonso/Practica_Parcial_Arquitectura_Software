@@ -1,0 +1,43 @@
+# ===============================
+# Python
+# ===============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+build/
+dist/
+
+# ===============================
+# Entornos virtuales
+# ===============================
+venv/
+.venv/
+env/
+ENV/
+
+# ===============================
+# Django
+# ===============================
+*.log
+staticfiles/
+media/
+
+# Base de datos local
+db.sqlite3
+helloworld/db.sqlite3
+helloworld/data/
+
+# ===============================
+# IDE
+# ===============================
+.vscode/
+.idea/
+
+# ===============================
+# Sistema
+# ===============================
+.DS_Store
+Thumbs.db
