@@ -4,6 +4,7 @@ from django.views import View
 from django import forms
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from .forms import ProductForm
 
 # Create your views here.
 class HomePageView(TemplateView):
@@ -72,10 +73,6 @@ class ProductShowView(View):
         viewData["product"] = product
 
         return render(request, self.template_name, viewData)
-    
-class ProductForm(forms.Form):
-    name = forms.CharField(required=True)
-    price = forms.FloatField(required=True)
 
 class ProductCreateView(View):
     template_name = 'pages/products/create.html'
